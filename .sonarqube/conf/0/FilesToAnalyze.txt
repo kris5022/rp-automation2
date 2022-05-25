@@ -1,0 +1,5 @@
+﻿C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.Driver\Factories\ChromeFactory.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.Driver\Factories\FirefoxFactory.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.Driver\Factories\IWebDriverFactory.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.Driver\Factories\WebDriverFactory.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.Driver\Factories\WebDriverProcessRegistry.cs

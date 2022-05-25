@@ -1,0 +1,2 @@
+﻿C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.Core\ConfigManager.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.Core\Utilities\Randomizer.cs

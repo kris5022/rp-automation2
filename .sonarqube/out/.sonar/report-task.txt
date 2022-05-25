@@ -1,0 +1,6 @@
+projectKey=rp-automation
+serverUrl=http://localhost:9001
+serverVersion=9.4.0.54424
+dashboardUrl=http://localhost:9001/dashboard?id=rp-automation
+ceTaskId=AYBqJQ9JmeBk-tYVQ-cw
+ceTaskUrl=http://localhost:9001/api/ce/task?id=AYBqJQ9JmeBk-tYVQ-cw

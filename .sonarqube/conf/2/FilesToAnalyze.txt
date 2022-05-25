@@ -1,0 +1,17 @@
+﻿C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\BasePage\BasePage.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\BasePage\IPage.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Dialogs\AddFilterPopup.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Dialogs\DeleteFilterDialog.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Dialogs\EditFilterPopup.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Dialogs\Sidebar.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Extensions\WebDriverExtension.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Extensions\WebElementExtension.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Fixtures\FiltersFixture.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Pages\DashboardsPage.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Pages\FiltersPage.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Pages\LaunchesPage.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Pages\LoginPage.cs
+C:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\UserSettings.cs
+C:\Users\Krystsina_Pulatava\.nuget\packages\xunit.runner.visualstudio\2.4.3\build\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Krystsina_Pulatava\.nuget\packages\xunit.runner.visualstudio\2.4.3\build\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\Krystsina_Pulatava\.nuget\packages\xunit.runner.visualstudio\2.4.3\build\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll

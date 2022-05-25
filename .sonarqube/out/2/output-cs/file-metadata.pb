@@ -1,0 +1,17 @@
+t
+kC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\BasePage\BasePage.csutf-8q
+hC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\BasePage\IPage.csutf-8y
+pC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Dialogs\AddFilterPopup.csutf-8}
+tC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Dialogs\DeleteFilterDialog.csutf-8z
+qC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Dialogs\EditFilterPopup.csutf-8r
+iC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Dialogs\Sidebar.csutf-8Ä
+wC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Extensions\WebDriverExtension.csutf-8Å
+xC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Extensions\WebElementExtension.csutf-8z
+qC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Fixtures\FiltersFixture.csutf-8w
+nC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Pages\DashboardsPage.csutf-8t
+kC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Pages\FiltersPage.csutf-8u
+lC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Pages\LaunchesPage.csutf-8r
+iC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\Pages\LoginPage.csutf-8o
+fC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\UserSettings.csutf-8¢
+ñC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.csutf-8î
+àC:\Users\Krystsina_Pulatava\Documents\rp-automation\rp-automation\Src\RP.Automation.UI\obj\Debug\net5.0\RP.Automation.UI.AssemblyInfo.csutf-8
