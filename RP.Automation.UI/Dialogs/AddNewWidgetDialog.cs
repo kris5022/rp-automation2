@@ -88,7 +88,6 @@ namespace RP.Automation.UI.Dialogs
         public AddNewWidgetDialog AddWidget()
         {
             AddButton.Click();
-            Thread.Sleep(1500);
             return this;
         }
     }

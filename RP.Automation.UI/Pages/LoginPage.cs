@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using RP.Automation.UI.BasePage;
-using System.Threading;
 
 namespace RP.Automation.Tests.Pages
 {
@@ -38,7 +37,6 @@ namespace RP.Automation.Tests.Pages
             UsernameInput.SendKeys(username);
             PasswordInput.SendKeys(password); 
             LoginButton.Click();
-            Thread.Sleep(1500);
             return this;
         }
     }

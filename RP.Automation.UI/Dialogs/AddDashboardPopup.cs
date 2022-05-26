@@ -40,7 +40,6 @@ namespace RP.Automation.UI.Dialogs
             var filterName = $"TestDashboard{Randomizer.RandomDigits()}";
             NameInput.ClearInput().SendKeys(filterName);
             AddButton.Click();
-            Thread.Sleep(1500);
             return filterName;
         }
     }
