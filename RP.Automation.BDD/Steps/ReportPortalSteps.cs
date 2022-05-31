@@ -6,6 +6,8 @@ using RP.Automation.Tests.Pages;
 using RP.Automation.UI.Dialogs;
 using RP.Automation.UI.Extensions;
 using RP.Automation.UI.Models;
+using System.Collections.Generic;
+using System.Linq;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -17,7 +19,6 @@ namespace RP.Automation.BDD.Steps
         private readonly UserSettings _userSettings;
         private readonly IWebDriver _driver;
         private static LoginPage LoginPage;
-        private static Sidebar Sidebar;
         private static DashboardsPage DashboardsPage;
         private static AddDashboardPopup AddDashboardPopup;
         private static AddNewWidgetDialog AddNewWidgetDialog;
@@ -29,7 +30,6 @@ namespace RP.Automation.BDD.Steps
             _driver = new ChromeDriver();
             _userSettings = userSettings;
             LoginPage = new LoginPage(_driver);
-            Sidebar = new Sidebar(_driver);
             DashboardsPage = new DashboardsPage(_driver);
             AddDashboardPopup = new AddDashboardPopup(_driver);
             AddNewWidgetDialog = new AddNewWidgetDialog(_driver);
@@ -45,7 +45,7 @@ namespace RP.Automation.BDD.Steps
         public void GivenTheUserSucessfullyLoggedIn()
         {
             LoginPage.Login(_userSettings.Username, _userSettings.Password);
-            //DashboardsPage.VerifyPageLoaded();
+            DashboardsPage.VerifyPageLoaded();
         }
 
         [Given(@"added new dashboard")]
@@ -68,13 +68,42 @@ namespace RP.Automation.BDD.Steps
         [When(@"the user add new widget")]
         public void GivenTheUserAddNewWidget(Table table)
         {
-            var widget = table.CreateInstance<WidgetType>();
+            var widget = table.CreateInstance<Widget>();
             var a = widget.ChartType;
             DashboardsPage.AddNewWidget();
             AddNewWidgetDialog.SelectWidgetType(widget.ChartType);
             AddNewWidgetDialog.GoToNextStep();
             filterName = AddNewWidgetDialog.AddNewFilter();
             AddNewWidgetDialog.AddWidget();
+        }
+
+        [When(@"the user add a new widget")]
+        public void GivenTheUserAAddNewWidget(Widget widget)
+        {
+            DashboardsPage.AddNewWidget();
+            AddNewWidgetDialog.SelectWidgetType(widget.ChartType);
+            AddNewWidgetDialog.GoToNextStep();
+            filterName = AddNewWidgetDialog.AddNewFilter();
+            AddNewWidgetDialog.AddWidget();
+        }
+
+        [When(@"user add new widget")]
+        public void GivenUserAddNewWidget(List<Widget> widgetList)
+        {
+            DashboardsPage.AddNewWidget();
+            AddNewWidgetDialog.SelectWidgetType(widgetList[0].ChartType);
+            AddNewWidgetDialog.GoToNextStep();
+            filterName = AddNewWidgetDialog.AddNewFilter();
+            AddNewWidgetDialog.AddWidget();
+        }
+
+        [StepArgumentTransformation]
+        public List<Widget> GetTestParameters(Table table)
+        {
+            return table.Rows.Select(row => new Widget
+            {
+                ChartType = row["ChartType"]
+            }).ToList();
         }
 
         [Then(@"the widget should be added to the list")]
