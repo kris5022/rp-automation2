@@ -1,13 +1,13 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using RP.Automation.Tests;
 using RP.Automation.UI.BasePage;
 
-namespace RP.Automation.Tests.Pages
+namespace RP.Automation.UI.Pages
 {
     public class LoginPage : BasePage<LoginPage>
     {
         private readonly UserSettings _userSettings;
-
         private readonly WebDriverWait _wait;
 
         public LoginPage(IWebDriver driver) : base(driver)

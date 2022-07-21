@@ -1,12 +1,13 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using RP.Automation.Tests;
 using RP.Automation.UI.BasePage;
 using RP.Automation.UI.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace RP.Automation.Tests.Pages
+namespace RP.Automation.UI.Pages
 {
     public class DashboardsPage : BasePage<DashboardsPage>
     {
