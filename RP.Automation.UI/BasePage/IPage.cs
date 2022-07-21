@@ -11,8 +11,6 @@ namespace RP.Automation.UI.BasePage
 
         int Timeout { get; set; }
 
-        //IWebDriver WebDriver { get; }
-
         IPage VerifyPageUrl();
 
         IPage WaitUntil(Func<IWebDriver, bool> waitUntil);

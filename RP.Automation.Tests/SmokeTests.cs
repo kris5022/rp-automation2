@@ -1,9 +1,9 @@
 using OpenQA.Selenium;
 using RP.Automation.Driver.Factories;
-using RP.Automation.Tests.Pages;
 using RP.Automation.UI.Dialogs;
 using RP.Automation.UI.Extensions;
 using RP.Automation.UI.Fixtures;
+using RP.Automation.UI.Pages;
 using Xunit;
 
 namespace RP.Automation.Tests
@@ -24,7 +24,6 @@ namespace RP.Automation.Tests
         [Fact]
         public void AddFilter()
         {
-            //add filter
             _driver.GoTo(_userSettings.BaseUrl, relativeUrl)
                 .VerifyPage<LoginPage>()
                 .Login(_userSettings.Username, _userSettings.Password)
@@ -45,7 +44,6 @@ namespace RP.Automation.Tests
                 .VerifyPage<FiltersPage>()
                 .VerifyFilterAdded(_filterName);
 
-            //delete filter
             _driver.VerifyPage<FiltersPage>()
                 .DeleteFilter(_filterName)
                 .VerifyPage<DeleteFilterDialog>()

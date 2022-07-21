@@ -1,12 +1,12 @@
 using HtmlElements;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using RP.Automation.Tests.Pages;
-using RP.Automation.Tests.Pages2;
+using RP.Automation.UI.Pages2;
 using RP.Automation.UI.Dialogs;
 using RP.Automation.UI.Extensions;
 using System;
 using Xunit;
+using RP.Automation.UI.Pages;
 
 namespace RP.Automation.Tests
 {

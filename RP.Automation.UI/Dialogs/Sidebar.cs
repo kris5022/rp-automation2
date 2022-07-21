@@ -21,6 +21,8 @@ namespace RP.Automation.UI.Dialogs
             WebDriver.FindElement(By.XPath(".//a[@href='#default_personal/filters']"));
         private IWebElement FiltersButton =>
             WebDriver.FindElement(By.XPath(".//a[@href='#default_personal/filters']"));
+        private IWebElement LaunchesButton =>
+            WebDriver.FindElement(By.XPath(".//a[@href='#default_personal/launches']"));
 
         public override string BaseUrl => _userSettings.BaseUrl;
         public override string RelativePath => "/ui/#default_personal";
@@ -40,6 +42,12 @@ namespace RP.Automation.UI.Dialogs
         public Sidebar OpenDashboards()
         {
             DashboardsButton.Click();
+            return this;
+        }
+
+        public Sidebar OpenLaunches()
+        {
+            LaunchesButton.Click();
             return this;
         }
     }

@@ -2,10 +2,10 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using RP.Automation.Tests;
-using RP.Automation.Tests.Pages;
 using RP.Automation.UI.Dialogs;
 using RP.Automation.UI.Extensions;
 using RP.Automation.UI.Models;
+using RP.Automation.UI.Pages;
 using System.Collections.Generic;
 using System.Linq;
 using TechTalk.SpecFlow;

@@ -10,8 +10,7 @@ namespace RP.Automation.API.Attributes
         {
             Verb = Method.Get;
         }
-
-        //public CookieScope CookieScope { get; set; }        
+        
         public int ReadWriteTimeout { get; set; }
         public string Resource { get; set; }
         public int ConnectionTimeout { get; set; }

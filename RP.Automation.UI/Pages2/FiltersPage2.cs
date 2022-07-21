@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace RP.Automation.Tests.Pages
+namespace RP.Automation.UI.Pages2
 {
     public class FiltersPage2 : HtmlPage
     {

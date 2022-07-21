@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace RP.Automation.Tests.Pages
+namespace RP.Automation.UI.Pages2
 {
     public class LaunchesPage2 : HtmlPage
     {

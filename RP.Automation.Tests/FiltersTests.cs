@@ -1,8 +1,8 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using RP.Automation.Tests.Pages;
 using RP.Automation.UI.Dialogs;
 using RP.Automation.UI.Extensions;
+using RP.Automation.UI.Pages;
 using System;
 using Xunit;
 
@@ -110,7 +110,7 @@ namespace RP.Automation.Tests
             DashboardsPage.ScrollToWidget(filterName);
             DashboardsPage.DragAndDropWidget(filterName);
             DashboardsPage.ResizeWidget();
-            //DashboardsPage.VerifyAddedWidget(filterName);
+            DashboardsPage.VerifyAddedWidget(filterName);
         }
 
         public void Dispose()
