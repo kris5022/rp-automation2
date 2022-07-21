@@ -31,9 +31,22 @@ namespace RP.Automation.UI.Extensions
             return element;
         }
 
+        public static IWebElement DragAndDrop(this IWebElement element, IWebDriver driver, int x, int y)
+        {
+            new Actions(driver).DragAndDropToOffset(element, x, y).Build().Perform();
+            return element;
+        }
+
         public static IWebElement JSClick(this IWebElement element, IWebDriver driver)
         {
             const string script = "var elem=arguments[0]; setTimeout(function() {elem.click();}, 100)";
+            script.ExecuteScript(driver, element);
+            return element;
+        }
+
+        public static IWebElement ScrollTo(this IWebElement element, IWebDriver driver)
+        {
+            const string script = "arguments[0].scrollIntoView(true); ";
             script.ExecuteScript(driver, element);
             return element;
         }

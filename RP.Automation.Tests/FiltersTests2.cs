@@ -1,43 +1,42 @@
+using HtmlElements;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using RP.Automation.UI.Pages2;
 using RP.Automation.UI.Dialogs;
 using RP.Automation.UI.Extensions;
-using RP.Automation.UI.Pages;
 using System;
 using Xunit;
+using RP.Automation.UI.Pages;
 
 namespace RP.Automation.Tests
 {
-    public class FiltersTests : IDisposable
+    public class FiltersTests2 : IDisposable
     {
         private readonly IWebDriver _driver;
         private readonly UserSettings _userSettings;
-        private static LoginPage LoginPage;
-        private static Sidebar Sidebar;
-        private static FiltersPage FiltersPage;
-        private static LaunchesPage LaunchesPage;
-        private static DashboardsPage DashboardsPage;
-        private static AddDashboardPopup AddDashboardPopup;
-        private static AddNewWidgetDialog AddNewWidgetDialog;
+        private static LoginPage2 LoginPage;
+        private static DashboardsPage2 DashboardsPage;
+        private static Sidebar2 Sidebar;
+        private static FiltersPage2 FiltersPage;
+        private static LaunchesPage2 LaunchesPage;
+        private static AddDashboardPopup2 AddDashboardPopup;
+        private static AddNewWidgetDialog2 AddNewWidgetDialog;
+        private static AddFilterPopup2 AddFilterPopup;
+        private static EditFilterPopup2 EditFilterPopup;
         private readonly string relativeUrl = string.Empty;
         private static string _filterName = string.Empty;
         private static string _newFilterName = string.Empty;
         private string filterName;
+        protected readonly IPageObjectFactory PageFactory;
 
-        public FiltersTests()
+        public FiltersTests2()
         {
             _driver = new ChromeDriver();
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             _userSettings = new UserSettings();
-            LoginPage = new LoginPage(_driver);
-            Sidebar = new Sidebar(_driver);
-            FiltersPage = new FiltersPage(_driver);
-            LaunchesPage = new LaunchesPage(_driver);
-            DashboardsPage = new DashboardsPage(_driver);
-            AddDashboardPopup = new AddDashboardPopup(_driver);
-            AddNewWidgetDialog = new AddNewWidgetDialog(_driver);
+            PageFactory = new PageObjectFactory();
         }
-        
+
         [Fact]
         public void AddFilter()
         {
@@ -47,38 +46,44 @@ namespace RP.Automation.Tests
             FiltersPage.AddFilter();
             LaunchesPage.SaveFilter();
 
-            _filterName = _driver.VerifyPage<AddFilterPopup>()
-                .AddFilter();
-
-            _driver.VerifyPage<LaunchesPage>();
-            _driver.VerifyPage<Sidebar>()
-                .OpenFilters()
-                .VerifyPage<FiltersPage>()
-                .VerifyFilterAdded(_filterName);
+            _filterName = AddFilterPopup.AddFilter();
+            Sidebar.OpenFilters();
+            FiltersPage.VerifyFilterAdded(_filterName);
         }
 
         [Fact]
         public void UpdateFilter()
         {
-            AddFilter();
-            _driver.VerifyPage<FiltersPage>()
-                .EditFilter(_filterName)
-                .VerifyPage<LaunchesPage>()
-                .EditFilter();
+            _driver.GoTo(_userSettings.BaseUrl, relativeUrl);
+            LoginPage.Login(_userSettings.Username, _userSettings.Password);
+            Sidebar.OpenFilters();
+            FiltersPage.AddFilter();
+            LaunchesPage.SaveFilter();
 
-            _newFilterName = _driver.VerifyPage<EditFilterPopup>()
-                .EditFilterName(_filterName);
+            _filterName = AddFilterPopup.AddFilter();
+            Sidebar.OpenFilters();
+            FiltersPage.VerifyFilterAdded(_filterName);
+            FiltersPage.EditFilter(_filterName);
+            LaunchesPage.EditFilter();
 
-            _driver.VerifyPage<Sidebar>()
-                .OpenFilters()
-                .VerifyPage<FiltersPage>()
-                .VerifyFilterAdded(_newFilterName);
+            _newFilterName = EditFilterPopup.EditFilterName(_filterName);
+
+            Sidebar.OpenFilters();
+            FiltersPage.VerifyFilterAdded(_newFilterName);
         }
 
         [Fact]
         public void DeleteFilter()
         {
-            AddFilter();
+            _driver.GoTo(_userSettings.BaseUrl, relativeUrl);
+            LoginPage.Login(_userSettings.Username, _userSettings.Password);
+            Sidebar.OpenFilters();
+            FiltersPage.AddFilter();
+            LaunchesPage.SaveFilter();
+
+            _filterName = AddFilterPopup.AddFilter();
+            Sidebar.OpenFilters();
+            FiltersPage.VerifyFilterAdded(_filterName);
             _driver.VerifyPage<FiltersPage>()
                 .DeleteFilter(_filterName)
                 .VerifyPage<DeleteFilterDialog>()
@@ -91,6 +96,11 @@ namespace RP.Automation.Tests
         public void AddWidget()
         {
             _driver.GoTo(_userSettings.BaseUrl, relativeUrl);
+            LoginPage = PageFactory.Create<LoginPage2>(_driver);
+            DashboardsPage = PageFactory.Create<DashboardsPage2>(_driver);
+            AddDashboardPopup = PageFactory.Create<AddDashboardPopup2>(_driver);
+            AddNewWidgetDialog = PageFactory.Create<AddNewWidgetDialog2>(_driver);
+
             LoginPage.Login(_userSettings.Username, _userSettings.Password);
             DashboardsPage.AddNewDashboard();
             AddDashboardPopup.AddDashboard();

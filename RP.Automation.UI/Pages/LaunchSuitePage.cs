@@ -9,28 +9,22 @@ using Xunit;
 
 namespace RP.Automation.UI.Pages
 {
-    public class LaunchesPage : BasePage<LaunchesPage>
+    public class LaunchSuitePage : BasePage<LaunchSuitePage>
     {
         private readonly UserSettings _userSettings;
 
         private readonly WebDriverWait _wait;
 
-        public LaunchesPage(IWebDriver driver) : base(driver)
+        public LaunchSuitePage(IWebDriver driver) : base(driver)
         {
             _userSettings = new UserSettings();
             _wait = new WebDriverWait(WebDriver, _userSettings.DefaultExplicitWaitTimeout);
         }
 
-        private IWebElement LaunchNameInput =>
-            WebDriver.FindElement(By.XPath(".//input[@class='inputConditional__input--1ZRQE inputConditional__touched--3gPX5']"));
-        private IWebElement SaveButton =>
-            WebDriver.FindElement(By.XPath(".//div[@class='filterControls__filter-controls--3Nox0']/div[4]"));
-        private List<IWebElement> LaunchNames =>
-            WebDriver.FindElements(By.XPath(".//div[@class='itemInfo__main-info--2HB9g']//div/span")).ToList();
+        private List<IWebElement> SuiteNames =>
+            WebDriver.FindElements(By.XPath(".//div[@class='tooltip__tooltip-trigger--3Z4Hc itemInfo__name--27fwI']")).ToList();
         private List<IWebElement> LaunchNumbers =>
             WebDriver.FindElements(By.XPath(".//span[@class='itemInfo__edit-number-box--24FEN']/a/span")).ToList();
-        private IWebElement EditButton =>
-            WebDriver.FindElement(By.XPath(".//div[@class='filterControls__control-button--Xx8z7'][3]"));
         private List<IWebElement> TotalSigns =>
             WebDriver.FindElements(By.XPath(".//div[@class='launchSuiteGrid__total-col--1zT8z gridCell__grid-cell--3e2mS gridCell__align-left--2beIG']//a")).ToList();
         private List<IWebElement> PassedSigns =>
@@ -51,26 +45,13 @@ namespace RP.Automation.UI.Pages
         public override string BaseUrl => _userSettings.BaseUrl;
         public override string RelativePath => "/ui/#default_personal/launches";
 
-        public override LaunchesPage VerifyPageLoaded()
+        public override LaunchSuitePage VerifyPageLoaded()
         {
-            _wait.Until(_ => LaunchNameInput.Displayed);
+            _wait.Until(_ => SuiteNames.First().Displayed);
             return base.VerifyPageLoaded();
         }
 
-        public LaunchesPage SaveFilter()
-        {
-            LaunchNameInput.SendKeys("TestLaunch");
-            SaveButton.Click();
-            return this;
-        }
-
-        public LaunchesPage EditFilter()
-        {
-            EditButton.Click();
-            return this;
-        }
-
-        public LaunchesPage VerifyLaunchCount(string launchName, int expTotal, int expPassed, int expFailed, int expSkipped,
+        public LaunchSuitePage VerifyLaunchSuiteCount(string launchName, int expTotal, int expPassed, int expFailed, int expSkipped,
             int expProductBug, int expAutoBug, int expSystemIssue, int expToInvestigate)
         {
             VerifyElementCount(launchName, TotalSigns, expTotal);
@@ -104,9 +85,9 @@ namespace RP.Automation.UI.Pages
         {
             var j = 0;
 
-            for (int i = 0; i < LaunchNames.Count; i++)
+            for (int i = 0; i < SuiteNames.Count; i++)
             {
-                var name = $"{LaunchNames[i].Text} {LaunchNumbers[i].Text}";
+                var name = $"{SuiteNames[i].Text} {LaunchNumbers[i].Text}";
                 if (name == launchName)
                 {
                     j = i;
@@ -118,12 +99,12 @@ namespace RP.Automation.UI.Pages
 
         public void OpenLaunceSuite(string suiteName)
         {
-            for (int i = 0; i < LaunchNames.Count; i++)
+            for (int i = 0; i < SuiteNames.Count; i++)
             {
-                var name = $"{LaunchNames[i].Text} {LaunchNumbers[i].Text}";
+                var name = $"{SuiteNames[i].Text} {LaunchNumbers[i].Text}";
                 if (name == suiteName)
                 {
-                    LaunchNames[i].Click();
+                    SuiteNames[i].Click();
                     break;
                 }
             }

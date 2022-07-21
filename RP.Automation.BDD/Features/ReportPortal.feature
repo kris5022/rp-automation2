@@ -25,3 +25,19 @@ When the user add new widget
 | 2 | Overall statistics      |
 | 3 | Launches duration chart |
 Then the widget should be added to the list
+
+Scenario: Add a new widget with different options (custom object)
+When the user add a new widget
+| N | ChartType               |
+| 1 | Launch statistics chart |
+| 2 | Overall statistics      |
+| 3 | Launches duration chart |
+Then the widget should be added to the list
+
+Scenario: Add a new widget with different options (list object)
+When user add new widget
+| N | ChartType               |
+| 1 | Launch statistics chart |
+| 2 | Overall statistics      |
+| 3 | Launches duration chart |
+Then the widget should be added to the list

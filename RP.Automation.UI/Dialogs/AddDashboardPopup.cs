@@ -4,7 +4,6 @@ using RP.Automation.Core.Utilities;
 using RP.Automation.Tests;
 using RP.Automation.UI.Extensions;
 using RP.Automation.UI.BasePage;
-using System.Threading;
 
 namespace RP.Automation.UI.Dialogs
 {
@@ -40,7 +39,6 @@ namespace RP.Automation.UI.Dialogs
             var filterName = $"TestDashboard{Randomizer.RandomDigits()}";
             NameInput.ClearInput().SendKeys(filterName);
             AddButton.Click();
-            Thread.Sleep(1500);
             return filterName;
         }
     }

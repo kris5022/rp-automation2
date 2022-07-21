@@ -1,11 +1,12 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using RP.Automation.Tests;
 using RP.Automation.UI.BasePage;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace RP.Automation.Tests.Pages
+namespace RP.Automation.UI.Pages
 {
     public class FiltersPage : BasePage<FiltersPage>
     {
