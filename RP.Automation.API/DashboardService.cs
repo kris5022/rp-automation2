@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using Newtonsoft.Json;
+using RestSharp;
 using RP.Automation.API.Models;
 
 namespace RP.Automation.API
@@ -19,7 +20,7 @@ namespace RP.Automation.API
         {
             var request = new RequestFactory().CreateRequest(_dashboardPath, Method.Post, createDashboardData);
             var response = CreateClient().Post(request);
-            _dashboardId = response.Content.Deserialize<CreateDashboardResponse>().Id;
+            _dashboardId = JsonConvert.DeserializeObject<CreateDashboardResponse>(response.Content).Id;
             return _dashboardId;
         }
 
@@ -27,7 +28,7 @@ namespace RP.Automation.API
         {
             var request = new RequestFactory().CreateRequest($"{_dashboardPath}/{_dashboardId}", Method.Put, updateDashboardData);
             var response = CreateClient().Put(request);
-            var message = response.Content.Deserialize<UpdateDashboardResponse>().message;
+            var message = JsonConvert.DeserializeObject<UpdateDashboardResponse>(response.Content).Message;
             return message;
         }
 
@@ -35,7 +36,7 @@ namespace RP.Automation.API
         {
             var request = new RequestFactory().CreateRequest($"{_dashboardPath}/{_dashboardId}", Method.Delete);
             var response = CreateClient().Delete(request);
-            var message = response.Content.Deserialize<UpdateDashboardResponse>().message;
+            var message = JsonConvert.DeserializeObject<UpdateDashboardResponse>(response.Content).Message;
             return message;
         }
     }

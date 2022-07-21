@@ -5,6 +5,6 @@ namespace RP.Automation.API.Models
     public class UpdateDashboardResponse
     {
         [JsonProperty("message")]
-        public string message { get; set; }
+        public string Message { get; set; }
     }
 }
