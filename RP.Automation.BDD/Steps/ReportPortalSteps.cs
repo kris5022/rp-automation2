@@ -85,6 +85,7 @@ namespace RP.Automation.BDD.Steps
             AddNewWidgetDialog.GoToNextStep();
             filterName = AddNewWidgetDialog.AddNewFilter();
             AddNewWidgetDialog.AddWidget();
+
         }
 
         [When(@"user add new widget")]
