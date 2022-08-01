@@ -10,6 +10,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+    <PackageReference Include="NunitXml.TestLogger" Version="3.0.117" />
     <PackageReference Include="RestSharp" Version="108.0.1" />
     <PackageReference Include="SpecFlow" Version="3.9.40" />
     <PackageReference Include="Unity" Version="5.11.10" />
